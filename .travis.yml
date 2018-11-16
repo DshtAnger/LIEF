@@ -64,12 +64,12 @@ matrix:
 
         # Linux gcc 6 - Python 3.7
         - os: linux
-          dist: trusty
+          dist: xenial
           compiler: gcc
           addons:
             apt:
               sources: ['ubuntu-toolchain-r-test', 'deadsnakes']
-              packages: ['g++-6', 'gcc-6', 'ccache', 'python3.7-dev']
+              packages: ['g++-6', 'gcc-6', 'ccache', 'python3.7', 'python3.7-dev']
           env: >
             [
             CXX_COMPILER=g++-6                         ,
