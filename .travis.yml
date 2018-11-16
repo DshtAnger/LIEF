@@ -6,22 +6,22 @@ git:
 matrix:
     include:
         # Linux gcc 5.0 - Python 2.7
-        - os: linux
-          dist: trusty
-          compiler: gcc
-          addons:
-            apt:
-              sources: ['ubuntu-toolchain-r-test']
-              packages: ['g++-5', 'ccache', 'libpython2.7']
-          env: >
-            [
-            CXX_COMPILER=g++-5                        ,
-            C_COMPILER=gcc-5                          ,
-            PYTHON_VERSION=2.7                        ,
-            PYTHON_INCLUDE_DIR=/usr/include/python2.7 ,
-            PYTHON_LIBRARY=/usr/lib/libpython2.7.so   ,
-            PYTHON_BINARY=/usr/bin/python2.7          ,
-            ]
+        #- os: linux
+        #  dist: trusty
+        #  compiler: gcc
+        #  addons:
+        #    apt:
+        #      sources: ['ubuntu-toolchain-r-test']
+        #      packages: ['g++-5', 'ccache', 'libpython2.7']
+        #  env: >
+        #    [
+        #    CXX_COMPILER=g++-5                        ,
+        #    C_COMPILER=gcc-5                          ,
+        #    PYTHON_VERSION=2.7                        ,
+        #    PYTHON_INCLUDE_DIR=/usr/include/python2.7 ,
+        #    PYTHON_LIBRARY=/usr/lib/libpython2.7.so   ,
+        #    PYTHON_BINARY=/usr/bin/python2.7          ,
+        #    ]
 
 
         # Linux gcc 5.0 - Python 3.5
@@ -63,22 +63,22 @@ matrix:
 
 
         # Linux gcc 6 - Python 3.7
-        #- os: linux
-        #  dist: trusty
-        #  compiler: gcc
-        #  addons:
-        #    apt:
-        #      sources: ['ubuntu-toolchain-r-test', 'deadsnakes']
-        #      packages: ['g++-6', 'gcc-6', 'ccache', 'python3.7-dev']
-        #  env: >
-        #    [
-        #    CXX_COMPILER=g++-6                         ,
-        #    C_COMPILER=gcc-6                           ,
-        #    PYTHON_VERSION=3.7                         ,
-        #    PYTHON_INCLUDE_DIR=/usr/include/python3.7m ,
-        #    PYTHON_LIBRARY=/usr/lib/libpython3.7m.so   ,
-        #    PYTHON_BINARY=/usr/bin/python3.7           ,
-        #    ]
+        - os: linux
+          dist: trusty
+          compiler: gcc
+          addons:
+            apt:
+              sources: ['ubuntu-toolchain-r-test', 'deadsnakes']
+              packages: ['g++-6', 'gcc-6', 'ccache', 'python3.7-dev']
+          env: >
+            [
+            CXX_COMPILER=g++-6                         ,
+            C_COMPILER=gcc-6                           ,
+            PYTHON_VERSION=3.7                         ,
+            PYTHON_INCLUDE_DIR=/usr/include/python3.7m ,
+            PYTHON_LIBRARY=/usr/lib/libpython3.7m.so   ,
+            PYTHON_BINARY=/usr/bin/python3.7           ,
+            ]
 
         # OSX 10.11 - xcode 7.3 - Python 2.7
         - os: osx
@@ -116,15 +116,15 @@ matrix:
 
 
         # OSX 10.12 - xcode 8.3 - Python 3.7
-        #- os: osx
-        #  osx_image: xcode8.3
-        #  compiler: clang
-        #  env: >
-        #    [
-        #    CXX_COMPILER=clang++ ,
-        #    C_COMPILER=clang     ,
-        #    PYTHON_VERSION=3.7   ,
-        #    ]
+        - os: osx
+          osx_image: xcode8.3
+          compiler: clang
+          env: >
+            [
+            CXX_COMPILER=clang++ ,
+            C_COMPILER=clang     ,
+            PYTHON_VERSION=3.7   ,
+            ]
 
 #branches:
 #  only:
